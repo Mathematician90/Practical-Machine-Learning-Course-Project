@@ -103,7 +103,7 @@ prediction_submit <- predict(modelrf, submittest, type = "class")
 print(prediction_submit)
 ```
 
-## 5.Conclusion
+## 5. Conclusion
 
 It seems RF is very good because it scores 100% (20/20) on the Course Project Submission (the 20 values to predict). I did not try to play with preprocessing generating PCA or scale & center the features because of enough result of Random Forest without any additional steps.
 
