@@ -89,12 +89,16 @@ Then we use Random Forest, because it has the most powerful prediction algorhytm
 set.seed(1234)
 modelrf<-randomForest(classe~., data = trainfortraining,ntree=200)
 print(modelrf)
+```
+We use cross-validation to see the accuracy score and then plotting error rate vs number of trees
+
+```r
 prediction_1 <- predict(modelrf, trainforcrossvalidation, type = "class")
 confusionMatrix(trainforcrossvalidation$classe, prediction_1)
 plot(modelrf,main="Random Forest: Error Rate vs Number of Trees")
 ```
 
-![](exercises_files/figure-html/unnamed-chunk-7-1.png)
+![](exercises_files/figure-html/unnamed-chunk-8-1.png)
 
 As seen by the result of the confusionmatrix, the model is good and efficient because it has an accuracy of 0.992 and very good sensitivity & specificity values on the testing dataset
 
